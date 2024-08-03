@@ -1,0 +1,243 @@
+/* GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5dc;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #572706;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+.logo .fa-building-columns {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* POPUP */
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup {
+    background-color: #f5f5dc;
+    color: #572706;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 33%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-name: animateEnlarge;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    z-index: 2000;
+}
+
+#popup-content {
+    font-family: 'Poppins', Arial, sans-serif;
+    padding: 5px 20px 20px 25px;
+    text-align: left;
+}
+
+#popup-content p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#popup-content ol {
+    margin-left: 0;
+    padding-left: 20px;
+    font-weight: 450;
+}
+
+#popup-content ol ol {
+    list-style-type: lower-alpha;
+    margin-left: 0;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+#popup-content li {
+    margin-bottom: 10px;
+}
+
+@keyframes animateEnlarge {
+    from {transform: translate(-50%, -50%) rotate(0) scale(0);}
+    to {transform: translate(-50%, -50%) rotate(0deg) scale(1);}
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+}
+
+.popup-overlay.active, .popup.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN */
+
+h1, h2, p {
+    color: #572706;
+}
+
+.game-container {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.guess-input {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    outline: none; 
+    box-shadow: 0 0 10px rgba(87, 39, 6, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #572706;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #401c03;
+}
+
+/* SEARCH SUGGESTIONS */
+
+.suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 70%;
+    left: 7.2%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item.active, .suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item:hover {
+    background-color: #ccc;
+}
+
+/* GUESSES */
+
+.guesses-container {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guess-headings, .guess-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.guess-headings {
+    font-weight: bold;
+    border-bottom: 2px solid #572706;
+    text-align: center;
+    color: #572706;
+}
+
+.guess-item {
+    background-color: transparent;
+    color: #572706;
+    font-weight: bold;
+    transform: translateX(-10px);
+}
+
+#guess-counter {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #572706;
+}

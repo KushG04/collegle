@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collegle</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4a64012256.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>Collegle</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="popup-trigger" id="how-link"><i class="fa-solid fa-question"></i></a></li>
+                <li><a href="#" class="popup-trigger" id="stats-link"><i class="fa-solid fa-chart-simple"></i></a></li>
+            </ul>
+        </nav>
+        <div class="popup-overlay" id="popup-overlay">
+            <div class="popup" id="popup">
+                <span class="close-button" id="close-button">&times;</span>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+    </header>
+    <h1>Collegle</h1>
+    <div class="game-container">
+        <div id="guess-counter">Guess 0 of 7</div>
+        <div class="guess-input">
+            <input type="text" id="guess" placeholder="Enter your guess">
+            <button id="submit-guess">Submit</button>
+            <div class="suggestions"></div>
+        </div>
+        <div class="guesses-container">
+            <div class="guess-headings">
+                <div>College</div>
+                <div>Ranking</div>
+                <div>Type</div>
+                <div>State</div>
+                <div>Acc Rate</div>
+            </div>
+            <div class="guesses-list"></div>
+        </div>
+    </div>
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup" id="popup">
+            <span class="close-button" id="close-button">&times;</span>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
